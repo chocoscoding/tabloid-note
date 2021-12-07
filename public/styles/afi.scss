@@ -1,0 +1,428 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Roboto", sans-serif;
+
+}
+$dmainbackground: #0e0e0e;
+$htcolor: #1a1a1a;
+$htcolor2: #202020;
+$hovercolor: #181717;
+$hovercolor2: #272626;
+$dcolor: #969696;
+$dcolor2: #9696961a;
+$dbright1: #f0f0f0;
+$danger1: #a52c2ce1;
+$danger2: #dd373741;
+$danger3: #f13939;
+$success2: #37dd4541;
+$success3: #39f152;
+
+body {
+    background-color: $dmainbackground;
+    position: relative;
+}
+input:focus,
+select:focus,
+textarea:focus,
+button:focus {
+    outline: none;
+}
+
+.c1{
+    background-color: #3fb610;
+}
+.c2{
+    background-color: #b6ab10;
+}
+.c3{
+    background-color: #696969;
+}
+.c4{
+    background-color: #b6102c;
+}
+.c5{
+    background-color: #104ab6;
+}
+
+.c6{
+    background-color: #a845eb;
+}
+.c7{
+    background-color: #b63710;
+}
+.c8{
+    background-color: #b6106b;
+}
+
+%centerele {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: 0.2s all ease;
+}
+%button1 {
+  width: 2.9rem;
+  height: 100%;
+  border: none;
+  transition: 0.2s all ease;
+  cursor: pointer;
+  font-weight: 900;
+  display: flex;
+  background-color: transparent;
+  justify-content: center;
+  align-items: center;
+  font-size: large;
+  &:hover {
+    border: 1px solid $htcolor2;
+    background-color: $hovercolor;
+  }
+}
+.top {
+  width: 100%;
+  max-width: 1800px;
+  height: 3rem;
+  display: flex;
+  justify-content: space-between;
+  margin: auto;
+  border-bottom: 1px solid $htcolor2;
+
+  #back {
+    width: 2.8rem;
+    height: 100%;
+    border: none;
+    cursor: pointer;
+    @extend %centerele;
+    color: #969696;
+    font-size: larger;
+    font-weight: 900;
+    background-color: transparent;
+
+    &:hover {
+      background-color: $htcolor;
+      color: $dbright1;
+      border: 1px solid $hovercolor2;
+    }
+
+    @media screen and (min-width: 1600px) {
+      margin-left: 1%;
+    }
+  }
+
+  .side {
+    width: 25%;
+    max-width: 400px;
+    min-width: 130px;
+    @extend %centerele;
+    justify-content: space-evenly;
+
+    #save {
+      @extend %button1;
+      color: $success3;
+    }
+
+    #changecolor {
+      @extend %button1;
+      color: $dbright1;
+    }
+
+    #delete {
+      @extend %button1;
+      color: $danger3;
+    }
+
+    @media screen and(max-width:650px) and (min-width: 401px) {
+      min-width: 300px;
+    }
+    @media screen and(max-width:400px) and (min-width: 260px) {
+      min-width: 200px;
+    }
+  }
+}
+
+.processresult {
+  display: none;
+  margin: auto;
+  font-size: medium;
+  width: 100%;
+  max-width: 1800px;
+  padding: 0 3% 0 3%;
+  color: $success3;
+  background-color: $success2;
+  text-align: center;
+  word-wrap: break-word;
+}
+
+.colorchange{
+    width: 50%;
+    min-width: 180px;
+    max-width: 400px;
+    display: none;
+    overflow-x: auto;
+    
+    .colorcont{
+        display: inline-flex;
+        cursor: pointer;
+
+        #color{
+            height: 3rem;
+            width: 3rem;
+            @extend %centerele;
+            color: #0e0e0e;
+
+        }
+    }
+
+    @media screen and (min-width:1100px) {
+        margin: auto;
+    }
+    @media screen and (max-width:400px) {
+        width: 100%;
+        min-width: none;
+    }
+}
+
+.mainarea {
+  width: 100%;
+  max-width: 1800px;
+  height: 48rem;
+  border: none;
+  margin: auto;
+  position: relative;
+//   overflow-y: auto;
+
+  .question{
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      background-color: #27262610;
+      backdrop-filter: blur(3px);
+      @extend %centerele;
+      flex-direction: column;
+      display: none;
+      z-index: 3;
+      text-align: center;
+      color: $dbright1;
+      font-weight: 900;
+      font-size: larger;
+
+      .option{
+          position: relative;
+          height: 20%;
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          flex-wrap: wrap;
+          width: 50%;
+
+          #option1{
+            //   width: 70px;
+            width: 34%;
+            border: none;
+              height: 3rem;
+              text-align: center;
+              background-color: $success2;
+              font-size: larger;
+              color: #181717;
+              font-weight: 900;
+              cursor: pointer;
+              border-radius: 10px;
+              transition: 0.12s all ease;
+
+              &:hover{
+                  background-color: $success3;
+                //   color: ;
+              }
+              @media screen and (max-width:590px) {
+                  width: 80%;
+                  height: 2.5rem;
+                  font-size: large;
+                  border-radius: 20px;
+
+              }
+          }
+          #option2{
+            //   width: 70px;
+            width: 34%;
+            border: none;
+              height: 3rem;
+              text-align: center;
+              background-color: $danger2;
+              font-size: larger;
+              font-weight: 900;
+              cursor: pointer;
+                color: $dcolor;
+              border-radius: 10px;
+              transition: 0.12s all ease;
+              
+              &:hover{
+                  background-color: $danger3;
+                  color: $dbright1; 
+              }
+              @media screen and (max-width:590px) {
+                  width: 80%;
+                  height: 2.5rem;
+                  font-size: large;
+                  border-radius: 20px;
+
+              }
+          }
+
+          @media screen and (max-width:590px) {
+              width: 99%;
+              margin-left: auto;
+              justify-content: center;
+          }
+      }
+
+      .closeatt{
+          border: 1px solid $hovercolor2;
+          height: 3rem;
+          cursor: pointer;
+          width: 3rem;
+          @extend %centerele;
+          border-radius: 7px;
+          top: 1%;
+          position: absolute;
+          background-color: #27262669;
+          right: 1%;
+
+          &:hover{
+              background-color: #272626;
+          }
+      }
+
+      @media screen and (max-width:590px) {
+          font-size: small;
+      }
+  }
+
+  .richtextfunccont {
+    display: flex;
+    width: 100%;
+    background-color: transparent;
+    background-color: $htcolor;
+    border-bottom:1px solid $dcolor;
+    padding-left: 1%;
+    overflow-x: auto;
+    transition: 0.25s all ease;
+
+    .richtextfunc {
+      display: inline-flex;
+
+      .function {
+        @extend %button1;
+        height: 3rem;
+        width: 3rem;
+        color: $dcolor;
+        cursor: pointer;
+
+        &:hover {
+          background-color: $dmainbackground;
+        }
+      }
+      
+    }
+    &:hover {
+      &::-webkit-scrollbar {
+        height: 0.3rem;
+        display: block;
+      }
+    }
+
+    &::-webkit-scrollbar {
+      height: 0.3rem;
+      display: none;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background-color: rgba(120, 117, 117, 0.265);
+      border-radius: 10px;
+    }
+
+    @media screen and (max-width: 500px) {
+      padding-left: 0;
+    }
+  }
+  @media screen and (max-width: 500px) {
+    height: 45rem;
+  }
+  @media screen and (max-width: 300px) {
+    height: 35rem;
+  }
+}
+.tarea {
+  width: 100%;
+  max-width: 1800px;
+  height: 44rem;
+  display: block;
+
+  #notetext {
+    overflow-y: auto;
+    background-color: $htcolor;
+    width: 100%;
+    height: 100%;
+    overflow-wrap: break-word;
+    font-size: larger;
+    word-wrap: break-word;
+    word-break: break-all;
+    display: inline-block;
+    outline: none;
+    border: none;
+    color: $dbright1;
+    padding: 1% 2% 0 2%;
+
+    &::-webkit-scrollbar {
+      width: 0.5rem;
+
+      &:hover {
+        width: 1rem;
+      }
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background-color: rgba(120, 117, 117, 0.265);
+      border-radius: 10px;
+      &:hover {
+        width: 1rem;
+      }
+    }
+
+    @media screen and (min-width: 1300px) {
+      font-size: xx-large;
+      padding: 2% 4% 0 4%;
+    }
+    @media screen and (max-width: 500px) {
+      font-size: medium;
+      padding: 2% 4% 0 4%;
+    }
+  }
+}
+.displaytruef{
+    display: flex !important;
+    width: 100%;
+}
+.displaytrueb{
+    display: block !important;
+}
+.displayfalse{
+    display: none !important;
+}
+.active{
+    background-color: $dmainbackground !important;
+}
+.disabled{
+  background-color: #292929 !important;
+  opacity: 20%;
+}
+#instruction{
+  text-align: center;
+  color: #6969699a;
+  word-wrap: break-word;
+  word-break: break-all;
+  font-weight: 900;
+  font-size: xx-large;
+  display: block;
+}

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta autocomplete="on" name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./styles/index.css">
+    <title>Tabloid</title>
+</head>
+<body>
+    <main>
+        <div class="maincontent">
+
+            <div class="box1">
+                <div class="modal">
+
+                    <div class="logocont"> </div>
+
+                    <h4>Put down all ideas and thoughts with the best notes web app...</h4>
+                </div>
+                <img src="./images/banner-2.png" alt="banner-image">
+
+                <button class="continue">
+                    Continue
+
+                    <object type="image/svg+xml" data="./styles/arrow-right-solid.svg"></object>
+                </button>
+            </div>
+            <div class="box2 ">
+                    <div class="status">LOADING....</div>
+
+            <h1 id="sh">Sign Up</h1>
+            <h1 id="lh">Login</h1>
+            <h1 id="rh">Reset Password</h1>
+            <p class="errormessageDom" id="maineerr"></p>
+            <form id="signup">
+                <div class="formcontainer">
+                
+                    <p>Full Name</p>
+                    <p class="errormessageDom" id="signup_fullnameerr"></p>
+                    <input type="text" placeholder="Full Name" autocomplete="name" name="usersname" id="name" required>
+                </div>
+                <div class="formcontainer">
+                    <p>Email</p>
+                    <p class="errormessageDom" id="signup_emailerr"></p>
+                    <input type="email" placeholder="Email" autocomplete="email" name="email" id="email" required>
+                </div>
+                <div class="formcontainer">
+                    <p>Password</p>
+                    <p class="errormessageDom" id="signup_paswderr"></p>
+                    <input type="password" placeholder="Password" autocomplete="new-password" name="password" id="password" required>
+                </div>
+                <div class="option1b">Don't have an account? Login</div>
+                <button type="submit" id="signup_submit">Sign Up</button>
+            </form>
+
+
+            <form id="login">
+                <div class="formcontainer">
+                    <p>Email</p>
+                    <p class="errormessageDom" id="login_emailerr"></p>
+                    <input type="email" placeholder="Email" autocomplete="email" name="loginemail" id="loginemail" required>
+                </div>
+                <div class="formcontainer">  
+                    <p>Password</p>
+                    <p class="errormessageDom" id="login_paswderr"></p>
+                    <input type="password" placeholder="Password" autocomplete="current-password" name="loginpassword" id="loginpassword" required>
+                </div>
+                <p class="option1a">Don't have an account? Sign Up</p>
+                <button type="submit" id="login_submit">Login</button>
+            </form>
+            
+            <div class="verify">
+                <p id="loggedin">You are logged in</p>
+
+                <br>
+                <button class="continueOnline">Continue Online</button>
+            </div>
+            <div class="or">OR</div>
+            <div class="option2">Continue offline</div>
+        </div>
+    </div>
+    </main>
+    <script src="index.js"></script>
+</body>
+</html>

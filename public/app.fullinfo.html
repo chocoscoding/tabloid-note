@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./styles/afi.css" />
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"
+      integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm"
+      crossorigin="anonymous"
+    />
+    <title>Tabloid</title>
+  </head>
+  <body>
+    <div class="top">
+      <button id="back"><i class="fas fa-arrow-left"></i></button>
+      <div class="side">
+        <button id="save"><i class="fas fa-save"></i></button>
+        <button id="delete"><i class="far fa-trash-alt"></i></button>
+        <button id="changecolor"><i class="fas fa-sort"></i></button>
+      </div>
+    </div>
+    <div class="colorchange">
+        <div class="colorcont">
+            <div id="color" class="c1"></div>
+            <div id="color" class="c2"></div>
+            <div id="color" class="c3"></div>
+            <div id="color" class="c4"></div>
+            <div id="color" class="c5"></div>
+            <div id="color" class="c6"></div>
+            <div id="color" class="c7"></div>
+            <div id="color" class="c8"></div>
+        </div>
+    </div>
+    <div class="processresult">WE meauve</div>
+    <br><br>
+    <div class="mainarea">
+        <div class="question">
+            <div class="closeatt"><i class="fas fa-times"></i></div>
+            If you Exit without saving, this particular note would be lost
+            <div class="option">
+                <button id="option1">Save</button><button id="option2">Exit</button>
+            </div>
+        </div>
+      <div class="richtextfunccont">
+        <div class="richtextfunc">
+          <button class="function" id="command" data-element="bold"><i class="fas fa-bold"></i></button>
+          <button class="function" id="command" data-element="italic"><i class="fas fa-italic"></i></button>
+          <button class="function" id="command" data-element="strikethrough"><i class="fas fa-strikethrough"></i></button>
+          <button class="function" id="command" data-element="underline"><i class="fas fa-underline"></i></button>
+          <!-- <button class="function" id="command" data-element="outdent"><i class="fas fa-outdent"></i></button>
+          <button class="function" id="command" data-element="indent"><i class="fas fa-indent"></i></button> -->
+          <button class="function" id="spell" ><i class="fas fa-spell-check"></i></button>
+          <button class="function" id="command" data-element="redo"><i class="fas fa-redo"></i></button>
+          <button class="function" id="command" data-element="undo"><i class="fas fa-undo"></i></button>
+        </div>
+      </div>
+      <div class="tarea">
+          <div name="notetext" contenteditable="true" id="notetext">
+            <h4 id="instruction">Start Typing...</h4>
+          </div>
+          <!-- <textarea name="notetext" contenteditable="true" id="notetext" cols="30" rows="10"></textarea> -->
+      </div>
+    </div>
+    <h3>ok</h3>
+
+    <script src="afi.js"></script>
+  </body>
+</html>
+

@@ -1,0 +1,496 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  font-family: "Roboto", sans-serif;
+}
+
+body {
+  background-color: #0e0e0e;
+  position: relative;
+}
+
+input:focus,
+select:focus,
+textarea:focus,
+button:focus {
+  outline: none;
+}
+
+.c1 {
+  background-color: #3fb610;
+}
+
+.c2 {
+  background-color: #b6ab10;
+}
+
+.c3 {
+  background-color: #696969;
+}
+
+.c4 {
+  background-color: #b6102c;
+}
+
+.c5 {
+  background-color: #104ab6;
+}
+
+.c6 {
+  background-color: #a845eb;
+}
+
+.c7 {
+  background-color: #b63710;
+}
+
+.c8 {
+  background-color: #b6106b;
+}
+
+.top #back, .top .side, .colorchange .colorcont #color, .mainarea .question, .mainarea .question .closeatt {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-transition: 0.2s all ease;
+  transition: 0.2s all ease;
+}
+
+.top .side #save, .top .side #changecolor, .top .side #delete, .mainarea .richtextfunccont .richtextfunc .function {
+  width: 2.9rem;
+  height: 100%;
+  border: none;
+  -webkit-transition: 0.2s all ease;
+  transition: 0.2s all ease;
+  cursor: pointer;
+  font-weight: 900;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  background-color: transparent;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-size: large;
+}
+
+.top .side #save:hover, .top .side #changecolor:hover, .top .side #delete:hover, .mainarea .richtextfunccont .richtextfunc .function:hover {
+  border: 1px solid #202020;
+  background-color: #181717;
+}
+
+.top {
+  width: 100%;
+  max-width: 1800px;
+  height: 3rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin: auto;
+  border-bottom: 1px solid #202020;
+}
+
+.top #back {
+  width: 2.8rem;
+  height: 100%;
+  border: none;
+  cursor: pointer;
+  color: #969696;
+  font-size: larger;
+  font-weight: 900;
+  background-color: transparent;
+}
+
+.top #back:hover {
+  background-color: #1a1a1a;
+  color: #f0f0f0;
+  border: 1px solid #272626;
+}
+
+@media screen and (min-width: 1600px) {
+  .top #back {
+    margin-left: 1%;
+  }
+}
+
+.top .side {
+  width: 25%;
+  max-width: 400px;
+  min-width: 130px;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+}
+
+.top .side #save {
+  color: #39f152;
+}
+
+.top .side #changecolor {
+  color: #f0f0f0;
+}
+
+.top .side #delete {
+  color: #f13939;
+}
+
+@media screen and (max-width: 650px) and (min-width: 401px) {
+  .top .side {
+    min-width: 300px;
+  }
+}
+
+@media screen and (max-width: 400px) and (min-width: 260px) {
+  .top .side {
+    min-width: 200px;
+  }
+}
+
+.processresult {
+  display: none;
+  margin: auto;
+  font-size: medium;
+  width: 100%;
+  max-width: 1800px;
+  padding: 0 3% 0 3%;
+  color: #39f152;
+  background-color: #37dd4541;
+  text-align: center;
+  word-wrap: break-word;
+}
+
+.colorchange {
+  width: 50%;
+  min-width: 180px;
+  max-width: 400px;
+  display: none;
+  overflow-x: auto;
+}
+
+.colorchange .colorcont {
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  cursor: pointer;
+}
+
+.colorchange .colorcont #color {
+  height: 3rem;
+  width: 3rem;
+  color: #0e0e0e;
+}
+
+@media screen and (min-width: 1100px) {
+  .colorchange {
+    margin: auto;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .colorchange {
+    width: 100%;
+    min-width: none;
+  }
+}
+
+.mainarea {
+  width: 100%;
+  max-width: 1800px;
+  height: 48rem;
+  border: none;
+  margin: auto;
+  position: relative;
+}
+
+.mainarea .question {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: #27262610;
+  -webkit-backdrop-filter: blur(3px);
+          backdrop-filter: blur(3px);
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  display: none;
+  z-index: 3;
+  text-align: center;
+  color: #f0f0f0;
+  font-weight: 900;
+  font-size: larger;
+}
+
+.mainarea .question .option {
+  position: relative;
+  height: 20%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  width: 50%;
+}
+
+.mainarea .question .option #option1 {
+  width: 34%;
+  border: none;
+  height: 3rem;
+  text-align: center;
+  background-color: #37dd4541;
+  font-size: larger;
+  color: #181717;
+  font-weight: 900;
+  cursor: pointer;
+  border-radius: 10px;
+  -webkit-transition: 0.12s all ease;
+  transition: 0.12s all ease;
+}
+
+.mainarea .question .option #option1:hover {
+  background-color: #39f152;
+}
+
+@media screen and (max-width: 590px) {
+  .mainarea .question .option #option1 {
+    width: 80%;
+    height: 2.5rem;
+    font-size: large;
+    border-radius: 20px;
+  }
+}
+
+.mainarea .question .option #option2 {
+  width: 34%;
+  border: none;
+  height: 3rem;
+  text-align: center;
+  background-color: #dd373741;
+  font-size: larger;
+  font-weight: 900;
+  cursor: pointer;
+  color: #969696;
+  border-radius: 10px;
+  -webkit-transition: 0.12s all ease;
+  transition: 0.12s all ease;
+}
+
+.mainarea .question .option #option2:hover {
+  background-color: #f13939;
+  color: #f0f0f0;
+}
+
+@media screen and (max-width: 590px) {
+  .mainarea .question .option #option2 {
+    width: 80%;
+    height: 2.5rem;
+    font-size: large;
+    border-radius: 20px;
+  }
+}
+
+@media screen and (max-width: 590px) {
+  .mainarea .question .option {
+    width: 99%;
+    margin-left: auto;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+}
+
+.mainarea .question .closeatt {
+  border: 1px solid #272626;
+  height: 3rem;
+  cursor: pointer;
+  width: 3rem;
+  border-radius: 7px;
+  top: 1%;
+  position: absolute;
+  background-color: #27262669;
+  right: 1%;
+}
+
+.mainarea .question .closeatt:hover {
+  background-color: #272626;
+}
+
+@media screen and (max-width: 590px) {
+  .mainarea .question {
+    font-size: small;
+  }
+}
+
+.mainarea .richtextfunccont {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  background-color: transparent;
+  background-color: #1a1a1a;
+  border-bottom: 1px solid #969696;
+  padding-left: 1%;
+  overflow-x: auto;
+  -webkit-transition: 0.25s all ease;
+  transition: 0.25s all ease;
+}
+
+.mainarea .richtextfunccont .richtextfunc {
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+}
+
+.mainarea .richtextfunccont .richtextfunc .function {
+  height: 3rem;
+  width: 3rem;
+  color: #969696;
+  cursor: pointer;
+}
+
+.mainarea .richtextfunccont .richtextfunc .function:hover {
+  background-color: #0e0e0e;
+}
+
+.mainarea .richtextfunccont:hover::-webkit-scrollbar {
+  height: 0.3rem;
+  display: block;
+}
+
+.mainarea .richtextfunccont::-webkit-scrollbar {
+  height: 0.3rem;
+  display: none;
+}
+
+.mainarea .richtextfunccont::-webkit-scrollbar-thumb {
+  background-color: rgba(120, 117, 117, 0.265);
+  border-radius: 10px;
+}
+
+@media screen and (max-width: 500px) {
+  .mainarea .richtextfunccont {
+    padding-left: 0;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .mainarea {
+    height: 45rem;
+  }
+}
+
+@media screen and (max-width: 300px) {
+  .mainarea {
+    height: 35rem;
+  }
+}
+
+.tarea {
+  width: 100%;
+  max-width: 1800px;
+  height: 44rem;
+  display: block;
+}
+
+.tarea #notetext {
+  overflow-y: auto;
+  background-color: #1a1a1a;
+  width: 100%;
+  height: 100%;
+  overflow-wrap: break-word;
+  font-size: larger;
+  word-wrap: break-word;
+  word-break: break-all;
+  display: inline-block;
+  outline: none;
+  border: none;
+  color: #f0f0f0;
+  padding: 1% 2% 0 2%;
+}
+
+.tarea #notetext::-webkit-scrollbar {
+  width: 0.5rem;
+}
+
+.tarea #notetext::-webkit-scrollbar:hover {
+  width: 1rem;
+}
+
+.tarea #notetext::-webkit-scrollbar-thumb {
+  background-color: rgba(120, 117, 117, 0.265);
+  border-radius: 10px;
+}
+
+.tarea #notetext::-webkit-scrollbar-thumb:hover {
+  width: 1rem;
+}
+
+@media screen and (min-width: 1300px) {
+  .tarea #notetext {
+    font-size: xx-large;
+    padding: 2% 4% 0 4%;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .tarea #notetext {
+    font-size: medium;
+    padding: 2% 4% 0 4%;
+  }
+}
+
+.displaytruef {
+  display: -webkit-box !important;
+  display: -ms-flexbox !important;
+  display: flex !important;
+  width: 100%;
+}
+
+.displaytrueb {
+  display: block !important;
+}
+
+.displayfalse {
+  display: none !important;
+}
+
+.active {
+  background-color: #0e0e0e !important;
+}
+
+.disabled {
+  background-color: #292929 !important;
+  opacity: 20%;
+}
+
+#instruction {
+  text-align: center;
+  color: #6969699a;
+  word-wrap: break-word;
+  word-break: break-all;
+  font-weight: 900;
+  font-size: xx-large;
+  display: block;
+}
+/*# sourceMappingURL=afi.css.map */

@@ -1,0 +1,446 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+        font-family: 'Roboto', sans-serif;
+}
+$dmainbackground: #0e0e0e;
+$htcolor: #1a1a1a;
+$htcolor2: #202020;
+$hovercolor: #181717;
+$hovercolor2: #272626;
+$dcolor: #969696;
+$dcolor2: #9696961a;
+$dbright1: #f0f0f0;
+$danger1 : #a52c2ce1;
+$danger2 : #dd373741;
+$danger3 : #f13939;
+$success2 : #37dd4541;
+$success3 : #39f152;
+
+
+$topheight: 2.8rem;
+input:focus, textarea:focus, select:focus{
+    outline: none;
+}
+body{
+    background-color: $dmainbackground;
+    outline: none;
+
+
+}
+//logo
+.logo{
+    width: 100%;
+    height: 1.4rem;
+    display: flex;
+    justify-content: center;
+    
+    img{
+        margin-top: 0.2rem;
+        height: 100%;
+        width: auto;
+    }
+}
+%button1{
+    width: $topheight;
+    height: $topheight;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: 0.2s all ease;
+    &:hover{
+        background-color: $hovercolor;
+    }
+}
+
+//top bar
+.top{
+    flex-wrap: wrap;
+    .inner{
+        width: 100%;
+        max-width: 1800px;
+        height: 100%;
+        margin: auto;
+        display: flex;
+        justify-content: space-between;
+
+        .add{
+            @extend %button1;
+
+            i{
+                color: $dcolor;
+            }
+        }
+            .settings{
+                @extend %button1;
+                position: relative;
+
+                #caution{
+                    display: none;
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    color: yellow;
+                    font-size: x-small;
+                    opacity: 50%;
+                }
+
+                i{
+                    color: $dcolor;
+                }
+
+                &:hover{
+                    #caution{
+                        opacity: 100%;
+                    }
+                }
+            }
+
+            @media screen and (max-width:400px) {
+                justify-content: space-between;
+                width: 100%;
+                border-bottom: 1px solid $htcolor2;
+            }
+        
+        
+    }
+}
+
+
+//Attention line
+.aline{
+    width: 100%;
+    height: auto;
+    border: none;
+    display: none;
+    line-height: 2rem;
+    padding: 0 2.5% 0 2.5%;
+    text-align: center;
+    // display: none;
+    color: $success3;
+    background-color: $success2;
+    // color: $danger3;
+    // background-color: $danger2;
+    font-weight: 700;
+
+    @media screen and (max-width:600px) {
+        font-size: 0.9rem;
+    }
+    @media screen and (max-width:300px) {
+        font-size: 0.7rem;
+    }
+}
+
+//display area
+
+.displayarea{
+    border: 1px soldi white;
+    height: 93vh;
+    width: 100%;
+    padding-top: 2%;
+    border-top: 1px solid $dcolor2;
+    margin-bottom: 1rem;
+    position: relative;
+
+    .smc{
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        display: none;
+        .showmore{
+            width: 170px;
+            height: 2.5rem;
+            border-radius: 7px;
+            border: none;
+            font-size: large;
+            font-weight: 800;
+            transition: 0.25s all ease;
+            margin: auto;
+            margin-bottom: 1%;
+            margin-top: 1%;
+            cursor: pointer;
+        
+        &:hover{
+            color: $dbright1;
+            border: 1px solid $dbright1;
+            background-color: transparent;
+        }
+    }
+}
+    
+    ul{
+        width: 93%;
+        margin: auto;
+        height: 100%;
+        overflow-y: auto;
+        list-style-type: none;
+        display: flex;
+        flex-wrap: wrap;
+        row-gap: 1rem;
+        column-gap: 1rem;
+        justify-content: left;
+
+        li{
+            // width: 360px;
+            // max-width: 1fr;
+            width: 32%;
+            min-height: 10rem;
+            max-height: 16rem;
+            text-overflow: ellipsis;
+
+            @media screen and (max-width:1650px) {
+                width: 32%;
+            }
+            @media screen and (max-width:1050px) {
+                width: 48%;
+            }
+            @media screen and (max-width:750px) {
+                width: 48%;
+            }
+            @media screen and (max-width:540px) {
+                width: 99%;
+            }
+        }
+        &::-webkit-scrollbar {
+           display: none;
+        }
+
+
+        @media screen and (min-width:2001px){
+            width: 68%;
+        }
+        @media screen and (max-width:2000px) and (min-width:1651px) {
+            width: 82%;
+        }
+        @media screen and (max-width:1050px) {
+            width: 99%;
+        }
+        @media screen and (max-width:1050px) {
+            width: 96%;
+            justify-content: center;
+        }
+        @media screen and (max-width:750px) {
+            width: 99%;
+            justify-content: center;
+                    column-gap: 0.51rem;
+        }
+        @media screen and (max-width:550px) {
+            width: 98%;
+            justify-content: center;
+                    column-gap: 0.51rem;
+        }
+
+    }
+}
+
+//container div for wach list
+.c1{
+    background-color: #3fb610;
+    color: #3fb610;
+}
+.c2{
+    background-color: #b6ab10;
+    color: #b6ab10;
+}
+.c3{
+    background-color: #696969;
+    color: #696969;
+}
+.c4{
+    background-color: #b6102c;
+    color: #b6102c;
+}
+.c5{
+    background-color: #104ab6;
+    color: #104ab6;
+}
+
+.c6{
+    background-color: #a845eb;
+    color: #a845eb;
+}
+.c7{
+    background-color: #b63710;
+    color: #b63710;
+}
+.c8{
+    background-color: #b6106b;
+    color: #b6106b;
+}
+
+.listelementcont{
+    width: 100%;
+    height: 100%;
+    border-radius: 6px;
+    border: none;
+    background-color: $htcolor;
+    position: relative;
+    cursor: pointer;
+
+    &:hover{
+        background-color: $hovercolor2;
+    }
+
+    .topline{
+        position: relative;
+        height: 0.5rem;
+        border-radius: 6px 6px 0 0;
+    }
+    .date{
+        background-color: transparent;
+        margin-top: 1%;
+        text-align: right;
+        margin-right: 2%;
+        margin-bottom: 2%;
+        font-size: 0.8rem;
+        
+        @media screen and (min-width:1490px) {
+            font-size: 1rem;
+            font-weight: 700;
+        }
+
+    }
+    .show_min_text{
+        color: $dbright1;
+        width: 95%;
+        font-size: large;
+        font-weight: 400;
+        margin: auto;
+        margin-bottom:1%;
+    min-height: 10rem;
+    max-height: 12rem;
+    overflow: hidden;
+    word-break: break-all;
+    text-overflow: ellipsis;
+
+        @media screen and (min-width:1300px) {
+            font-size: 1.5rem;
+            margin-bottom: 5%;
+        }
+    }
+}
+.addnewcont{
+    display: none;
+    width: 20vw;
+    position: absolute;
+    right: 0.5%;
+    top: 2%;
+    border: 1px solid rgba(255, 255, 255, 0.137);
+    height: 40vh;
+    overflow-y: auto;
+    background-color: $dmainbackground;
+    border-radius: 7px;
+    transition: 0.2s all ease;
+    overflow-x: hidden;
+
+    .cover{
+        width: 100%;
+        height: 100%;
+        position: relative;
+        .box_top{
+            width: 100%;
+            height: 3.1rem;
+            display: flex;
+            justify-content: right;
+            color: $dmainbackground;
+                button{
+                    background-color: transparent;
+                    width: 3rem;
+                    cursor: pointer;
+                    height: 100%;
+                    border: none;
+                    transition: 0.15s all ease;
+                    border-bottom-left-radius: 5px;
+                    i{
+                        color: $dcolor;
+                        font-size: 1.5rem;
+                        
+                    }
+                    &:hover{
+                        background-color: $htcolor;
+                        
+                    }
+                }
+            
+
+        }
+
+        .text1{
+            color: $dbright1;
+            width: 95%;
+            text-align: center;
+            font-size: 0.8rem;
+            font-weight: 300;
+            i{
+                color: yellow;
+                margin-right: 1%;
+            }
+        }
+        .text2{
+            margin-top: 10%;
+            color: $dbright1;
+            width: 95%;
+            text-align: center;
+            font-size: 0.9rem;
+        }
+
+        .loginbutton, .logoutbutton{
+            width: 90%;
+            height: 2.5rem;
+            margin-left: 5%;
+            cursor: pointer;
+            border-radius: 6px;
+            margin-top: 4%;
+            border: none;
+            text-align: center;
+            font-size: larger;
+            font-weight: 800;
+            transition: 0.3s all ease;
+
+            &:hover{
+                color: $dbright1;
+                background-color: transparent;
+                border: 1px solid $dbright1;
+            }
+        }
+        .logoutbutton{
+            display: none;
+        }
+
+    }
+
+
+    @media screen and (max-width:750px) {
+        width: 45vw;
+    }
+    @media screen and (max-width:550px) {
+        width: 65vw;
+        height: 15rem;
+    }
+    @media screen and (max-width:290px) {
+        width: 80vw;
+        height: 15rem;
+    }
+}
+
+.intro{
+    color: $dcolor;
+    font-weight: 900;
+    font-size: large;
+    width: 90%;
+    margin: auto;
+    height: auto;
+    word-wrap: break-word;
+    word-break: break-all;
+    text-align: center;
+    
+}
+
+
+blockquote{
+    all: unset;
+    margin: 0 !important;
+}
