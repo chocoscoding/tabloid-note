@@ -1,3 +1,5 @@
+const { LocalStorage } = require("node-localstorage");
+
 const searchbutton = document.querySelector('.search');
 const searchboxcontainer = document.querySelector('.sbi');
 const settings = document.querySelector('.settings');
@@ -143,11 +145,17 @@ document.querySelector('.loginbutton').addEventListener('click', ()=>{
 
 //check userinfo to determin if user is logged in with the aid of cookies
 async function checkuser(){
-    const res = await fetch("/api/v1", { 
-        method: "GET",
-        headers: {'Content-Type': 'application/json'}});
-    const data = await res.json();    
-    localStorage.setItem('tabloiduserdata', JSON.stringify(data))
+
+    const offlineactive = JSON.parse(localStorage.getItem('offlineactive'))
+
+    if(!offlineactive){
+
+        const res = await fetch("/api/v1", { 
+            method: "GET",
+            headers: {'Content-Type': 'application/json'}});
+            const data = await res.json();    
+            localStorage.setItem('tabloiduserdata', JSON.stringify(data))
+        }
 }
 checkuser()
 

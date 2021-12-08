@@ -43,6 +43,7 @@ nextslide.addEventListener('click', () => {
 })
 continueoffline.addEventListener('click', ()=>{
         localStorage.setItem('tabloiduserdata', JSON.stringify({email:null, fullname: null, "offline":true}))
+        localStorage.setItem('offlineactive', JSON.stringify(true));
         setTimeout(() => {
     window.location.href = 'app.html'          
         }, 900);
@@ -67,7 +68,8 @@ signup_submit.addEventListener('click', async (e)=>{
     [signupbody, signuph, loginbody, loginh].map(items => items.remove())
     verifybody.style.display = 'flex';
 
-    document.querySelector('#loggedin').textContent += ` as ${data.name}`
+    document.querySelector('#loggedin').textContent += ` as ${data.name}`;
+    localStorage.setItem('offlineactive', JSON.stringify(false));
 
     document.querySelector('.continueOnline').addEventListener('click', ()=>{
         location.assign('/app.html')
@@ -120,7 +122,8 @@ login_submit.addEventListener('click',async (e)=>{
             [signupbody, signuph, loginbody, loginh].map(items => items.remove())
             verifybody.style.display = 'flex';
         
-            document.querySelector('#loggedin').textContent += ` as ${data.name}`
+            document.querySelector('#loggedin').textContent += ` as ${data.name}`;
+            localStorage.setItem('offlineactive', JSON.stringify(false));
         
             document.querySelector('.continueOnline').addEventListener('click', ()=>{
                 location.assign('/app.html')
