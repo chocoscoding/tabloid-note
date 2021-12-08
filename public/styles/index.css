@@ -869,6 +869,7 @@ footer {
   border: 1px solid #070707;
   font-weight: 700;
   text-align: center;
+  margin: auto;
 }
 
 footer span {
