@@ -71,8 +71,9 @@ signup_submit.addEventListener('click', async (e)=>{
     document.querySelector('#loggedin').textContent += ` as ${data.name}`;
     localStorage.setItem('offlineactive', JSON.stringify(false));
 
-    document.querySelector('.continueOnline').addEventListener('click', ()=>{
-            localStorage.setItem('offlineactive', JSON.stringify(false));
+    document.querySelector('.continueOnline').addEventListener('click', async ()=>{
+                await checkuser();
+            await localStorage.setItem('offlineactive', JSON.stringify(false));
         setTimeout(() => {
             
             location.assign('/app.html')
@@ -129,8 +130,9 @@ login_submit.addEventListener('click',async (e)=>{
             document.querySelector('#loggedin').textContent += ` as ${data.name}`;
             localStorage.setItem('offlineactive', JSON.stringify(false));
         
-            document.querySelector('.continueOnline').addEventListener('click', ()=>{
-                    localStorage.setItem('offlineactive', JSON.stringify(false));
+            document.querySelector('.continueOnline').addEventListener('click', async ()=>{
+                        await checkuser();
+                    await localStorage.setItem('offlineactive', JSON.stringify(false));
                 setTimeout(() => {
                     
                     location.assign('/app.html')
@@ -183,8 +185,9 @@ function checkifuser(){
 
     document.querySelector('#loggedin').textContent += ` as ${fullname}`
 
-    document.querySelector('.continueOnline').addEventListener('click', ()=>{
-            localStorage.setItem('offlineactive', JSON.stringify(false));
+    document.querySelector('.continueOnline').addEventListener('click', async ()=>{
+        await checkuser();
+        await localStorage.setItem('offlineactive', JSON.stringify(false));
         setTimeout(() => {
             
             location.assign('/app.html')
@@ -195,3 +198,4 @@ function checkifuser(){
 
 
 
+ 
