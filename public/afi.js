@@ -23,18 +23,6 @@ const offlinetabdata = localStorage.getItem('tabloid')
 const offlineuniqueid = localStorage.getItem('tabloid_newtoken');
 const dataid = new URLSearchParams(document.location.search).get('id')
 
-//handler for process
-function loading(eventn){
-    if(eventn === 'start'){
-        process.style.display = 'block';
-        process.innerHTML = 'loading...Please hold on';
-        process.style.color = `#8a910b`;
-        process.style.background = `#f2ff0028`;
-    }else{
-        process.style.display = 'none';
-    }
-}
-loading('start')
 
 const processresult = (type, value)=>{
     process.style.display = 'block';
@@ -56,20 +44,24 @@ const processresult = (type, value)=>{
 //function that checks and reads;
 const readdata = ()=>{
     if(offline){
-        const tempstore = JSON.parse(localStorage.getItem('tabloid'))
-        const finddata = tempstore.find(data => data._id === dataid);
-        if(dataid){
-            if(finddata){
-                newnote = true;
-                    instruction.style.display = 'none';
-    ;
-                textbox.innerHTML = finddata['notedata']
-                colord = finddata['deccolor']
+        const newnotedata = JSON.parse(localStorage.getItem('newnote'))
+        if(!newnotedata){
+            const tempstore = JSON.parse(localStorage.getItem('tabloid'))
+            const finddata = tempstore.find(data => data._id === dataid);
+            if(dataid){
+                if(finddata){
+                    newnote = true;
+                        instruction.style.display = 'none';
+        ;
+                    textbox.innerHTML = finddata['notedata']
+                    colord = finddata['deccolor']
+                }
+                else{
+                    newnote = false;
+                }
+                checkinitialsave();
             }
-            else{
-                newnote = false;
-            }
-            checkinitialsave();
+
         }
     }
     else if(!offline){
@@ -96,8 +88,6 @@ const readdata = ()=>{
         getdata()
         
     }
-
-    loading('stop')
     }
     readdata()
      
@@ -161,7 +151,7 @@ if(!savestatus){
     }
 }
 else{
-
+    JSON.stringify(localStorage.setItem('newnote', false))
     window.location.href = 'app.html'
 }
 })
@@ -356,6 +346,7 @@ option1.addEventListener('click',async ()=>{
 
         savedata();
         savestatus= true;
+        JSON.stringify(localStorage.setItem('newnote', false))
         window.location.href = 'app.html'
     }
     else if(!offline){

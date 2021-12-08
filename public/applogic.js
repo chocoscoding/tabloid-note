@@ -26,7 +26,7 @@ const offlinetoken = () => {
 //event for creating new note
 addnewnote.addEventListener('click', async () => {
         window.location.href = 'app.fullinfo.html?id=' + offlinetoken();
-        JSON.stringify(localStorage.setItem('newnote', false))
+        JSON.stringify(localStorage.setItem('newnote', true))
 })
 
 settings.addEventListener('click', () => {
