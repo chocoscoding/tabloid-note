@@ -23,8 +23,7 @@ const login_submit = document.querySelector('#login_submit');
 const signup_fullnameerr = document.querySelector('#signup_fullnameerr')
 const signup_emailerr = document.querySelector('#signup_emailerr')
 const signup_paswderr = document.querySelector('#signup_paswderr')
-// const message;   
-
+// const message; 
 openlogin.addEventListener('click',()=>{
     [signupbody, signuph].map(items => items.style.display = 'none')
     loginbody.style.display = 'flex'
@@ -43,7 +42,10 @@ nextslide.addEventListener('click', () => {
 
 })
 continueoffline.addEventListener('click', ()=>{
-    window.location.href = 'app.html'
+        localStorage.setItem('tabloiduserdata', JSON.stringify({email:null, fullname: null, "offline":true}))
+        setTimeout(() => {
+    window.location.href = 'app.html'          
+        }, 900);
 })
 //logic for signing up users
 signup_submit.addEventListener('click', async (e)=>{
