@@ -40,6 +40,7 @@ closesettingspop.addEventListener('click', () => {
 const adddatatodom = () => {
     document.querySelector('#unlistcont').innerHTML = ``;
     if (offline) {
+        const alldata = JSON.parse(localStorage.getItem('tabloid'));
         alldata.forEach(element => {
             let domToBeAdded = `<li id="${element._id}">
             <div id="data1" class="listelementcont">

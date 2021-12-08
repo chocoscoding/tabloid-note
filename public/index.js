@@ -72,7 +72,11 @@ signup_submit.addEventListener('click', async (e)=>{
     localStorage.setItem('offlineactive', JSON.stringify(false));
 
     document.querySelector('.continueOnline').addEventListener('click', ()=>{
-        location.assign('/app.html')
+            localStorage.setItem('offlineactive', JSON.stringify(false));
+        setTimeout(() => {
+            
+            location.assign('/app.html')
+        }, 700);
     })
            }
            if(data.errors){
@@ -126,7 +130,11 @@ login_submit.addEventListener('click',async (e)=>{
             localStorage.setItem('offlineactive', JSON.stringify(false));
         
             document.querySelector('.continueOnline').addEventListener('click', ()=>{
-                location.assign('/app.html')
+                    localStorage.setItem('offlineactive', JSON.stringify(false));
+                setTimeout(() => {
+                    
+                    location.assign('/app.html')
+                }, 700);
             })
         }
         if(data.errors){
@@ -176,7 +184,11 @@ function checkifuser(){
     document.querySelector('#loggedin').textContent += ` as ${fullname}`
 
     document.querySelector('.continueOnline').addEventListener('click', ()=>{
-        location.assign('/app.html')
+            localStorage.setItem('offlineactive', JSON.stringify(false));
+        setTimeout(() => {
+            
+            location.assign('/app.html')
+        }, 700);
     })
     }
 } checkifuser()

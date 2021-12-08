@@ -387,12 +387,12 @@ else if(!offline){
 }
 }
 readdata()
-
+ 
 
 //disable change color and delete if the note has not been initially saved
 function checkinitialsave (){
     const check = newnote;
-    if(!check){
+    if(!check){ 
         [changecolorfunc,deletenote].map(data => data.classList.toggle('disabled'));
         [changecolorfunc,deletenote].map(data => data.disabled = true )
     } else{
