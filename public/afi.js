@@ -55,9 +55,9 @@ const processresult = (type, value)=>{
 }
 //function that checks and reads;
 const readdata = ()=>{
-    const tempstore = JSON.parse(localStorage.getItem('tabloid'))
-    const finddata = tempstore.find(data => data._id === dataid);
     if(offline){
+        const tempstore = JSON.parse(localStorage.getItem('tabloid'))
+        const finddata = tempstore.find(data => data._id === dataid);
         if(dataid){
             if(finddata){
                 newnote = true;
@@ -150,7 +150,7 @@ const getDate = ()=>{
     }
     return `${monthfinal} ${day}`
     }
-       
+
 //return home button which will pop up a confirmation box if you haven't saved your data
 returnhome.addEventListener('click', ()=>{
 
