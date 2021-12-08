@@ -1,5 +1,3 @@
-const { LocalStorage } = require("node-localstorage");
-
 const searchbutton = document.querySelector('.search');
 const searchboxcontainer = document.querySelector('.sbi');
 const settings = document.querySelector('.settings');
