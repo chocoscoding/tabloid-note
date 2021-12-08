@@ -592,27 +592,3 @@ main {
   font-size: small;
   // display: none;
 }
-
-footer{
-  width: 100%;
-  max-width: 1860px;
-  height: auto;
-  padding: 2%;
-  color: #5a5a5a;
-  background-color: #0a0a0a;
-  border: 1px solid #070707;
-  font-weight: 700;
-  text-align: center;
-  margin: auto;
-
-  span{
-    color: rgb(245, 16, 54);
-  }
-  a{
-    text-decoration: none;
-    color: #fdfdfd;
-  &:hover{
-    text-decoration: underline;
-  }
-  }
-}
