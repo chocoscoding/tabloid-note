@@ -22,53 +22,6 @@ const {offline, _id} = JSON.parse(localStorage.getItem('tabloiduserdata'));
 const offlinetabdata = localStorage.getItem('tabloid')
 const offlineuniqueid = localStorage.getItem('tabloid_newtoken');
 const dataid = new URLSearchParams(document.location.search).get('id')
-//function to get current date
-const getDate = ()=>{
-const date = new Date();
-let monthfinal;
-const month = date.getMonth() + 1;
-const day = date.getDate();
-switch(month){
-    case 1:
-        monthfinal = 'Jan'
-        break;
-    case 2:
-        monthfinal = 'Feb'
-        break;
-    case 3:
-        monthfinal = 'Mar'
-        break;
-    case 4:
-        monthfinal = 'Apr'
-        break;
-    case 5:
-        monthfinal = 'May'
-        break;
-    case 6:
-        monthfinal = 'Jun'
-        break;
-    case 7:
-        monthfinal = 'Jul'
-        break;
-    case 8:
-        monthfinal = 'Aug'
-        break;
-    case 9:
-        monthfinal = 'Sep'
-        break;
-    case 10:
-        monthfinal = 'Oct'
-        break;
-    case 11:
-        monthfinal = 'Nov'
-        break;
-    case 12:
-        monthfinal = 'Dec'
-        break;
-}
-return `${monthfinal} ${day}`
-}
-
 
 //handler for process
 function loading(eventn){
@@ -112,7 +65,6 @@ const readdata = ()=>{
     ;
                 textbox.innerHTML = finddata['notedata']
                 colord = finddata['deccolor']
-                loading('stop')
             }
             else{
                 newnote = false;
@@ -134,7 +86,6 @@ const readdata = ()=>{
                 instruction.remove();
                 textbox.innerHTML = finddata['notedata']
                 colord = finddata['deccolor']
-                loading('stop')
             }
             else{
                 newnote = false;
@@ -145,10 +96,61 @@ const readdata = ()=>{
         getdata()
         
     }
+
+    loading('stop')
     }
     readdata()
      
     
+
+
+ //function to get current date
+const getDate = ()=>{
+    const date = new Date();
+    let monthfinal;
+    const month = date.getMonth() + 1;
+    const day = date.getDate();
+    switch(month){
+        case 1:
+            monthfinal = 'Jan'
+            break;
+        case 2:
+            monthfinal = 'Feb'
+            break;
+        case 3:
+            monthfinal = 'Mar'
+            break;
+        case 4:
+            monthfinal = 'Apr'
+            break;
+        case 5:
+            monthfinal = 'May'
+            break;
+        case 6:
+            monthfinal = 'Jun'
+            break;
+        case 7:
+            monthfinal = 'Jul'
+            break;
+        case 8:
+            monthfinal = 'Aug'
+            break;
+        case 9:
+            monthfinal = 'Sep'
+            break;
+        case 10:
+            monthfinal = 'Oct'
+            break;
+        case 11:
+            monthfinal = 'Nov'
+            break;
+        case 12:
+            monthfinal = 'Dec'
+            break;
+    }
+    return `${monthfinal} ${day}`
+    }
+       
 //return home button which will pop up a confirmation box if you haven't saved your data
 returnhome.addEventListener('click', ()=>{
 
