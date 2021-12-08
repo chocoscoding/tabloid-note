@@ -71,6 +71,17 @@ return `${monthfinal} ${day}`
 
 
 //handler for process
+function loading(eventn){
+    if(eventn === 'start'){
+        process.style.display = 'block';
+        process.innerHTML = 'loading...Please hold on';
+        process.style.color = `#8a910b`;
+        process.style.background = `#f2ff0028`;
+    }else{
+        process.style.display = 'none';
+    }
+}
+loading('start')
 
 const processresult = (type, value)=>{
     process.style.display = 'block';
@@ -89,6 +100,55 @@ const processresult = (type, value)=>{
     }, 3500);
 
 }
+//function that checks and reads;
+const readdata = ()=>{
+    const tempstore = JSON.parse(localStorage.getItem('tabloid'))
+    const finddata = tempstore.find(data => data._id === dataid);
+    if(offline){
+        if(dataid){
+            if(finddata){
+                newnote = true;
+                    instruction.style.display = 'none';
+    ;
+                textbox.innerHTML = finddata['notedata']
+                colord = finddata['deccolor']
+                loading('stop')
+            }
+            else{
+                newnote = false;
+            }
+            checkinitialsave();
+        }
+    }
+    else if(!offline){
+    
+        async function getdata(){
+            const res = await fetch (`/api/v1/${_id}/:noteid`, {
+                method: "GET",
+                headers: {'Content-Type': 'application/json'}
+            });
+            const dataArray = await res.json();
+            const finddata = dataArray.find(data => data._id === dataid);
+            if(finddata){
+                newnote = true;
+                instruction.remove();
+                textbox.innerHTML = finddata['notedata']
+                colord = finddata['deccolor']
+                loading('stop')
+            }
+            else{
+                newnote = false;
+            }
+            checkinitialsave();
+            showcolorUI()
+        }
+        getdata()
+        
+    }
+    }
+    readdata()
+     
+    
 //return home button which will pop up a confirmation box if you haven't saved your data
 returnhome.addEventListener('click', ()=>{
 
@@ -342,52 +402,6 @@ if(!offline){
 }
 }
 
-//function that checks and reads;
-const readdata = ()=>{
-const tempstore = JSON.parse(localStorage.getItem('tabloid'))
-const finddata = tempstore.find(data => data._id === dataid);
-if(offline){
-    if(dataid){
-        if(finddata){
-            newnote = true;
-                instruction.style.display = 'none';
-;
-            textbox.innerHTML = finddata['notedata']
-            colord = finddata['deccolor']
-        }
-        else{
-            newnote = false;
-        }
-        checkinitialsave();
-    }
-}
-else if(!offline){
-
-    async function getdata(){
-        const res = await fetch (`/api/v1/${_id}/:noteid`, {
-            method: "GET",
-            headers: {'Content-Type': 'application/json'}
-        });
-        const dataArray = await res.json();
-        const finddata = dataArray.find(data => data._id === dataid);
-        if(finddata){
-            newnote = true;
-            instruction.remove();
-            textbox.innerHTML = finddata['notedata']
-            colord = finddata['deccolor']
-        }
-        else{
-            newnote = false;
-        }
-        checkinitialsave();
-        showcolorUI()
-    }
-    getdata()
-    
-}
-}
-readdata()
- 
 
 //disable change color and delete if the note has not been initially saved
 function checkinitialsave (){
