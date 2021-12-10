@@ -14,6 +14,9 @@ const deletenote = document.querySelector('#delete')
 const instruction = document.querySelector('#instruction')
 const process = document.querySelector('.processresult')
 
+if(JSON.parse(localStorage.getItem('tabloiduserdata')) === null){
+    window.location.href = '/';
+}
 // localStorage.setItem('tabloid_newtoken', offlinetoken());
 var savestatus = true;
 var newnote;
@@ -255,6 +258,8 @@ if(offline){
                 x.splice(indexnum, 1, newdata)
                     localStorage.setItem('tabloid', JSON.stringify(x))
             }
+
+            readdata()
         }
         newdatafiltered()
     }
@@ -265,9 +270,10 @@ if(offline){
             'notedata': textbox.innerHTML,
             'lastModified': getDate()
         }]))
+
+        readdata();
     }
 
-    window.location.reload();
 
 
     

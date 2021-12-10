@@ -6,6 +6,10 @@ const closesettingspop = document.querySelector('.popopt2');
 const addnewnote = document.querySelector('.add')
 
 
+
+if(JSON.parse(localStorage.getItem('tabloiduserdata')) === null){
+    window.location.href = '/';
+}
 const {offline} = JSON.parse(localStorage.getItem('tabloiduserdata'))
 const alldata = JSON.parse(localStorage.getItem('tabloid'))
 let uploadtodatabase;
