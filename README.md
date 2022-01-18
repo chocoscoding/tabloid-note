@@ -15,6 +15,7 @@ BASIC FEATURES
 *Change note color*
 *Spell Check*
 *Add note*
+*Edit note*
 *Delete NOte*
 
 # VIEW IT HERE [https://tabloid-notes.herokuapp.com/]
